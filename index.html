@@ -1,122 +1,260 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Penumbra Autonomy — Space autonomy solutions</title>
-<meta name="description" content="Penumbra Autonomy builds onboard perception, estimation and navigation that let spacecraft see, characterize and operate around uncooperative objects.">
-<meta property="og:title" content="Penumbra Autonomy — Space autonomy solutions">
-<meta property="og:description" content="Penumbra Autonomy builds onboard perception, estimation and navigation that let spacecraft see, characterize and operate around uncooperative objects.">
-<meta property="og:image" content="https://penumbraspace.com/assets/hero-limb.jpg">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&amp;family=Didact+Gothic&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>
-body{margin:0;background:#05070C}
-a{color:#FFC000;text-decoration:none}a:hover{color:#FFD65C}
-.hero-bg{background-image:linear-gradient(180deg,rgba(5,7,12,0.55) 0%,rgba(5,7,12,0.15) 40%,rgba(5,7,12,0.85) 85%,#05070C 100%),url(assets/hero-limb.jpg);background-size:cover;background-position:62% 50%}
-.closing-bg{background-image:linear-gradient(180deg,#05070C 0%,rgba(5,7,12,0.6) 35%,rgba(5,7,12,0.75) 100%),url(assets/hero-limb.jpg);background-size:cover;background-position:30% 50%}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penumbra Autonomy — Space autonomy solutions</title>
+  <meta name="description" content="Penumbra Autonomy builds onboard perception, estimation and navigation that let spacecraft see, characterize and operate around uncooperative objects, without waiting on the ground.">
+  <link rel="canonical" href="https://penumbraspace.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://penumbraspace.com/">
+  <meta property="og:title" content="Penumbra Autonomy — Unknown to known, on orbit.">
+  <meta property="og:description" content="Onboard perception, estimation and navigation for spacecraft inspection, characterization and proximity operations.">
+  <meta property="og:image" content="https://penumbraspace.com/assets/hero-limb.jpg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; --bg:#080b10; --panel:#10151e; --line:#29303b; --text:#f2f3f5; --muted:#b1b8c4; --gold:#ffc000; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:28px; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 'Manrope',Arial,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    a:hover { color:var(--gold); }
+    a:focus-visible, summary:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
+    img { display:block; max-width:100%; }
+    h1,h2,h3,p { margin:0; }
+    h1,h2,h3 { line-height:1.15; }
+    h1 { font-size:clamp(46px,5.3vw,78px); font-weight:600; letter-spacing:-.055em; }
+    h2 { font-size:clamp(32px,3.4vw,48px); font-weight:600; letter-spacing:-.045em; text-wrap:balance; }
+    h3 { font-size:23px; font-weight:600; letter-spacing:-.025em; }
+    .container { width:min(1280px,100%); padding-inline:40px; margin-inline:auto; }
+    .frame { width:min(1392px,calc(100% - 48px)); margin-inline:auto; }
+    .eyebrow { display:flex; align-items:center; gap:12px; color:var(--gold); font:11px/1.6 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.13em; margin-bottom:22px; }
+    .eyebrow::before { content:''; width:7px; height:7px; flex:none; background:var(--gold); border-radius:50%; }
+    .eyebrow.plain::before { display:none; }
+    .button { display:inline-flex; justify-content:center; align-items:center; gap:28px; min-height:52px; padding:14px 22px; color:#080b10; background:var(--gold); border:1px solid var(--gold); border-radius:4px; font-size:14px; font-weight:700; }
+    .button:hover { color:#080b10; background:#ffd04a; border-color:#ffd04a; }
+    .link { display:inline-flex; align-items:center; gap:20px; font-size:14px; font-weight:600; color:var(--gold); }
+    .skip { position:absolute; left:20px; top:-90px; z-index:10; background:var(--gold); color:var(--bg); padding:12px; }
+    .skip:focus { top:10px; }
+    .navigation { min-height:100px; display:flex; align-items:center; justify-content:space-between; gap:24px; position:relative; }
+    .logo { width:145px; height:auto; }
+    .nav-links { display:flex; gap:30px; align-items:center; font-size:13px; font-weight:500; }
+    .nav-links .button { min-height:44px; padding:10px 18px; gap:20px; font-size:12px; }
+    .mobile-menu { display:none; }
+    .hero { position:relative; overflow:hidden; border:1px solid #353b46; border-radius:16px; background:#080b10; }
+    .hero::before { position:absolute; inset:0; content:''; background:linear-gradient(90deg,rgba(5,7,12,.95) 0%,rgba(5,7,12,.75) 43%,rgba(5,7,12,.12) 100%),linear-gradient(0deg,#080b10eb,transparent 45%),url('assets/hero-limb.jpg') 68% 50% / cover; }
+    .hero-body { padding:74px 64px 60px; position:relative; z-index:1; }
+    .hero-brand { display:flex; justify-content:center; margin-bottom:48px; }
+    .hero-brand img { width:400px; height:auto; }
+    .hero h1 { max-width:810px; }
+    .hero h1 .accent { color:var(--gold); }
+    .hero h1 .line { display:block; }
+    .hero-description { max-width:680px; margin-top:28px; font-size:18px; line-height:1.75; color:#d2d7e0; }
+    .identity { width:100%; display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-top:24px; color:#9da6b5; font-size:12px; border-top:1px solid var(--line); }
+    .identity strong { color:#e2e6ec; font-weight:500; }
+    .section { padding-block:90px; }
+    .challenge { padding-bottom:0; }
+    .hero + .capabilities { margin-top:90px; }
+    .section-top { display:flex; justify-content:space-between; gap:48px; align-items:end; margin-bottom:40px; }
+    .section-top > p { max-width:390px; color:var(--muted); font-size:15px; }
+    .problem-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:32px; }
+    .problem { display:grid; grid-template-rows:subgrid; grid-row:span 3; border-top:1px solid var(--line); padding-top:22px; }
+    .number { color:var(--gold); font:11px 'JetBrains Mono',monospace; letter-spacing:.08em; }
+    .problem h3 { margin-top:26px; margin-bottom:15px; }
+    .problem p { font-size:15px; color:var(--muted); }
+    .capabilities { border:1px solid var(--line); border-radius:16px; background:radial-gradient(ellipse at 10% 100%,#29303f44,transparent 60%),var(--panel); padding:64px; }
+    .capability-layout { display:grid; grid-template-columns:.95fr 1.15fr; gap:80px; }
+    .capability-intro > p:not(.eyebrow) { color:var(--muted); margin-top:24px; font-size:15px; }
+    .orbit-art { position:relative; width:min(280px,100%); margin:32px auto 0; aspect-ratio:1; }
+    .orbit-art svg { width:100%; height:100%; }
+    .orbit-art img { position:absolute; inset:0; margin:auto; width:62px; }
+    .capability { border-top:1px solid #3a4350; }
+    .capability:last-child { border-bottom:1px solid #3a4350; }
+    .capability summary { list-style:none; display:grid; grid-template-columns:28px 1fr 24px; gap:16px; align-items:center; cursor:pointer; padding:26px 0; }
+    .capability summary::-webkit-details-marker { display:none; }
+    .capability summary .name { font-size:26px; font-weight:600; letter-spacing:-.025em; }
+    .capability summary .expand { font-size:26px; font-weight:400; color:#adb6c5; text-align:center; line-height:1; }
+    .capability summary .expand::after { content:'+'; }
+    .capability[open] summary .expand::after { content:'−'; }
+    .capability[open] summary .name { color:var(--gold); }
+    .capability-content { padding:0 0 28px 44px; }
+    .capability-content h3 { font-size:17px; line-height:1.5; margin-bottom:12px; }
+    .capability-content p { color:var(--muted); font-size:15px; }
+    .capability-content .outcome { color:#e4e8ef; margin-top:20px; font-size:13px; border-left:2px solid var(--gold); padding-left:14px; }
+    .applications .section-top h2 { max-width:680px; }
+    .mission-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .mission { overflow:hidden; border-radius:12px; background:var(--panel); border:1px solid var(--line); }
+    .mission-image { position:relative; }
+    .mission img { width:100%; aspect-ratio:16/8; object-fit:cover; }
+    .mission-tag { position:absolute; left:24px; bottom:20px; padding:6px 10px; background:#080b10db; border:1px solid #ffffff33; font:10px 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.08em; }
+    .mission-copy { padding:30px; }
+    .mission-copy h3 { font-size:27px; }
+    .mission-copy p { color:var(--muted); font-size:15px; margin-top:16px; }
+    .mission-copy .link { margin-top:25px; }
+    .team { border-top:1px solid var(--line); }
+    .team-top { max-width:720px; margin-bottom:40px; }
+    .team-top > p:not(.eyebrow) { color:var(--muted); margin-top:22px; }
+    .people { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+    .person { display:flex; align-items:start; gap:20px; padding-top:24px; border-top:1px solid var(--line); }
+    .person img { width:80px; height:96px; flex:none; object-fit:cover; border-radius:4px; filter:grayscale(1); }
+    .person h3 { font-size:17px; line-height:1.5; }
+    .person .role { color:var(--gold); font-size:11px; margin-top:5px; }
+    .person p:last-child { color:var(--muted); font-size:12px; margin-top:12px; }
+    .team-link { margin-top:32px; }
+    .contact { padding:64px; border:1px solid #8f732c; border-radius:16px; background:radial-gradient(ellipse at 100% 0%,#ffc00017,transparent 70%),#11151c; display:flex; justify-content:space-between; align-items:center; gap:40px; }
+    .contact-copy { max-width:720px; }
+    .contact h2 { font-size:clamp(32px,3.6vw,50px); }
+    .contact p:not(.eyebrow) { color:var(--muted); font-size:15px; margin-top:20px; max-width:570px; }
+    .contact-action { flex:none; }
+    .contact-action > a:last-child { display:block; text-align:center; font-size:12px; margin-top:16px; color:var(--muted); }
+    footer { padding-block:38px; }
+    footer .container { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+    footer .logo { width:112px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:24px; color:#bbc2cd; font-size:12px; }
+    .copyright { width:100%; color:#97a1b0; font-size:11px; }
+    @media (min-width:1600px) { .hero-body { padding-block:90px 76px; } }
+    @media (max-width:1100px) {
+      .capability-layout { gap:40px; }
+      .capabilities { padding:44px; }
+      .contact { padding:44px; }
+      .people { gap:20px; }
+      .person { flex-direction:column; gap:16px; }
+      .person img { width:100px; height:110px; }
+      .nav-links { gap:20px; }
+      .hero-body { padding-inline:44px; }
+    }
+    @media (max-width:760px) {
+      .frame { width:calc(100% - 28px); }
+      .container { padding-inline:24px; }
+      .navigation { min-height:86px; }
+      .logo { width:125px; }
+      .nav-links { display:none; }
+      .mobile-menu { display:block; }
+      .mobile-menu summary { list-style:none; cursor:pointer; font-size:12px; border:1px solid #505966; border-radius:4px; padding:9px 12px; }
+      .mobile-menu summary::-webkit-details-marker { display:none; }
+      .mobile-menu summary::after { content:' +'; color:var(--gold); }
+      .mobile-menu[open] summary::after { content:' −'; }
+      .mobile-menu nav { position:absolute; top:72px; left:0; right:0; z-index:5; padding:14px 24px; border:1px solid var(--line); background:#10151efc; border-radius:8px; box-shadow:0 16px 32px #0008; }
+      .mobile-menu nav a { display:block; padding:12px 0; font-size:14px; }
+      .mobile-menu nav a:last-child { color:var(--gold); }
+      .hero-body { padding:40px 28px 34px; }
+      .hero-brand { margin-bottom:32px; }
+      .hero-brand img { width:280px; }
+      .hero h1 { font-size:clamp(37px,8vw,57px); }
+      .hero-description { font-size:16px; line-height:1.75; margin-top:24px; }
+      .identity { font-size:11px; gap:8px 22px; padding-top:22px; }
+      .section { padding-block:60px; }
+      .challenge { padding-bottom:0; }
+      .hero + .capabilities { margin-top:60px; }
+      .section-top { display:block; margin-bottom:30px; }
+      .section-top > p { margin-top:22px; }
+      .problem-grid { grid-template-columns:1fr; gap:28px; }
+      .problem { grid-row:auto; grid-template-rows:auto; grid-template-columns:24px 1fr; gap:8px 16px; padding-top:18px; }
+      .problem .number { padding-top:5px; }
+      .problem h3 { margin:0; font-size:21px; }
+      .problem p { grid-column:2; font-size:14px; }
+      .capabilities { padding:34px 28px; }
+      .capability-layout { grid-template-columns:1fr; gap:32px; }
+      .orbit-art { display:none; }
+      .capability-intro > p:not(.eyebrow) { max-width:550px; }
+      .capability summary { padding-block:22px; }
+      .mission-grid { grid-template-columns:1fr; }
+      .mission-copy { padding:26px; }
+      .contact { padding:38px 28px; flex-direction:column; align-items:start; gap:28px; }
+      .contact-action > a:last-child { text-align:left; }
+    }
+    @media (max-width:480px) {
+      .hero-body { padding-inline:24px; }
+      .hero h1 { font-size:clamp(35px,9vw,43px); }
+      .hero h1 .line { max-width:310px; }
+      .eyebrow { font-size:10px; letter-spacing:.09em; margin-bottom:20px; }
+      .capabilities { padding-inline:24px; }
+      .capability summary { grid-template-columns:22px 1fr 20px; gap:10px; }
+      .capability summary .name { font-size:24px; }
+      .capability-content { padding-left:32px; }
+      .people { grid-template-columns:1fr; gap:24px; }
+      .person { flex-direction:row; }
+      .person img { width:80px; height:96px; }
+      .contact-action { width:100%; }
+      .contact-action .button { width:100%; }
+      footer .container { align-items:start; flex-direction:column; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
 </head>
 <body>
-<div style="background: #05070C; color: #E9ECF2; font-family: 'Didact Gothic', 'Helvetica Neue', sans-serif; font-size: 17px; line-height: 1.6; min-width: 0; position: relative;">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="frame navigation">
+    <a href="./" aria-label="Penumbra Autonomy home"><img class="logo" src="assets/logo-wordmark.png" alt="Penumbra Autonomy" width="145" height="56"></a>
+    <nav class="nav-links" aria-label="Primary"><a href="#capabilities">Capabilities</a><a href="#applications">Applications</a><a href="#team">Our team</a><a class="button" href="mailto:info@penumbraspace.com?subject=Mission%20discussion">Discuss your mission <span aria-hidden="true">↗</span></a></nav>
+    <details class="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile primary"><a href="#capabilities">Capabilities</a><a href="#applications">Applications</a><a href="#team">Our team</a><a href="mailto:info@penumbraspace.com?subject=Mission%20discussion">Discuss your mission ↗</a></nav></details>
+  </header>
+  <main id="main">
+    <section class="hero frame" aria-labelledby="hero-title">
+      <div class="hero-body">
+        <div class="hero-brand"><img src="assets/logo-wordmark.png" alt="Penumbra Autonomy" width="240" height="93"></div>
+        <h1 id="hero-title"><span class="line">Unknown to <span class="accent">known,</span></span> <span class="line">on orbit.</span></h1>
+        <p class="hero-description">Penumbra Autonomy builds onboard perception, estimation and navigation that let spacecraft see, characterize and operate around uncooperative objects, without waiting on the ground.</p>
+      </div>
+    </section>
 
-<!-- NAV -->
-<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 2;">
-<nav aria-label="Primary" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;">
-<a href="./" aria-label="Penumbra Autonomy home" style="display: flex; align-items: center;"><img src="assets/logo-wordmark.png" alt="Penumbra Autonomy" style="height: 44px; width: auto; display: block;"></a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px; letter-spacing: 0.04em;">
-<a href="#capabilities" style="color: #FFFFFF; padding: 10px 0;">Capabilities</a>
-<a href="applications.html" style="color: #C9CED8; padding: 10px 0;">Applications</a>
-<a href="team.html" style="color: #C9CED8; padding: 10px 0;">Team</a>
-<a href="mailto:info@penumbraspace.com" style="color: #05070C; background: #FFC000; padding: 10px 20px; border-radius: 2px; font-weight: 600;">Contact</a>
-</div>
-</nav>
-</header>
+    <section class="capabilities frame" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="capability-layout">
+        <div class="capability-intro"><p class="eyebrow">Our capabilities</p><h2 id="capabilities-title">See the target.<br>Understand it.<br>Operate around it.</h2><p>Perception, estimation and navigation for inspection and proximity operations around uncooperative objects.</p>
+          <div class="orbit-art" aria-hidden="true"><svg viewBox="0 0 280 280" fill="none"><circle cx="140" cy="140" r="110" stroke="#46505e"/><circle cx="140" cy="140" r="78" stroke="#46505e" stroke-dasharray="2 7"/><ellipse cx="140" cy="140" rx="123" ry="50" transform="rotate(-35 140 140)" stroke="#ffc000" stroke-opacity=".7"/><circle cx="237" cy="71" r="5" fill="#ffc000"/><path d="M140 12v16M140 252v16M12 140h16M252 140h16" stroke="#687383"/></svg><img src="assets/logo-mark.png" alt="" width="62" height="62"></div>
+        </div>
+        <div class="capability-list">
+          <details class="capability" name="capability" open><summary><span class="number">01</span><span class="name">Perception</span><span class="expand" aria-hidden="true"></span></summary><div class="capability-content"><h3>Detect and track through changing illumination.</h3><p>Maintain awareness of an object as it moves through light and shadow. Our perception capabilities support inspection of targets that offer no cooperative assistance.</p><p class="outcome">A clearer view of the object your mission depends on.</p></div></details>
+          <details class="capability" name="capability"><summary><span class="number">02</span><span class="name">Estimation</span><span class="expand" aria-hidden="true"></span></summary><div class="capability-content"><h3>Characterize the target and its motion.</h3><p>Build an understanding of an object's behavior and its state relative to the observing spacecraft, informing inspection and approach decisions.</p><p class="outcome">More knowledge before committing to closer operations.</p></div></details>
+          <details class="capability" name="capability"><summary><span class="number">03</span><span class="name">Navigation</span><span class="expand" aria-hidden="true"></span></summary><div class="capability-content"><h3>Support proximity operations onboard.</h3><p>Provide relative navigation around uncooperative objects, supporting spacecraft operations as conditions change and reducing reliance on continuous ground involvement.</p><p class="outcome">Greater autonomy for operations around unfamiliar targets.</p></div></details>
+          <details class="capability" name="capability"><summary><span class="number">04</span><span class="name">Scalability</span><span class="expand" aria-hidden="true"></span></summary><div class="capability-content"><h3>Low-SWaP-C autonomy.</h3><p>Designed for spacecraft with tight size, weight, power, and cost constraints.</p><p class="outcome">Accessible autonomy across spacecraft and fleets.</p></div></details>
+        </div>
+      </div>
+    </section>
 
-<!-- HERO -->
-<section id="top" class="hero-bg" style="min-height: 820px; display: flex; align-items: flex-end; padding: 160px 0 96px;">
-<div style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box;">
-<p style="margin: 0 0 20px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFC000;">Space autonomy solutions</p>
-<h1 style="margin: 0; font-family: 'Julius Sans One', sans-serif; font-weight: 400; font-size: clamp(36px, 5.6vw, 77px); line-height: 1.02; letter-spacing: 0.01em; max-width: 900px; color: #FFFFFF;">Unknown to known, on orbit.</h1>
-<p style="margin: 28px 0 0; max-width: 640px; font-size: 20px; line-height: 1.55; color: #D4D8E1;">Penumbra Autonomy builds onboard perception, estimation and navigation that let spacecraft see, characterize and operate around uncooperative objects, without waiting on the ground.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px;">
-<a href="#capabilities" style="background: #FFC000; color: #05070C; padding: 16px 28px; font-weight: 600; border-radius: 2px;">Our capabilities</a>
-<a href="applications.html" style="border: 1px solid rgba(255,255,255,0.45); color: #FFFFFF; padding: 15px 27px; border-radius: 2px;">Applications</a>
-</div>
-<p style="margin: 56px 0 0; font-size: 14px; color: #9AA1AF; letter-spacing: 0.04em;">A Georgia Tech spinout · Founded 2026</p>
-</div>
-</section>
+    <section class="section container challenge" id="problem" aria-labelledby="problem-title">
+      <div class="section-top"><div><p class="eyebrow">The Problem</p><h2 id="problem-title">Congested orbits.<br>Contested operations.</h2></div></div>
+      <div class="problem-grid">
+        <article class="problem"><span class="number">01</span><h3>Uncooperative objects</h3><p>Inspect and navigate around spacecraft and debris that cannot cooperate.</p></article>
+        <article class="problem"><span class="number">02</span><h3>Denied communications</h3><p>Operate onboard when ground communications are unavailable.</p></article>
+        <article class="problem"><span class="number">03</span><h3>Unknown motion</h3><p>Characterize unfamiliar objects before closer operations.</p></article>
+      </div>
+    </section>
 
-<!-- OUR CAPABILITIES -->
-<section id="capabilities" style="padding: 112px 0; background: #0A0E17; border-top: 1px solid #151B27; border-bottom: 1px solid #151B27;">
-<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box;">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center;">
-<div>
-<p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFC000;">Our capabilities</p>
-<h2 style="margin: 0; font-family: 'Julius Sans One', sans-serif; font-weight: 400; font-size: clamp(26px, 3.4vw, 42px); line-height: 1.12; color: #FFFFFF;">Onboard autonomy where light meets shadow</h2>
-<p style="margin: 24px 0 0; color: #A9AFBD; max-width: 520px;">The penumbra is the partial shadow between light and dark, and it is exactly where autonomous operations in orbit get hard. We build autonomy that works there, end to end, on off-the-shelf sensors.</p>
-</div>
-<figure style="margin: 0; background: #000000; border: 1px solid #1C2230; aspect-ratio: 1 / 1; max-width: 460px; width: 100%; justify-self: center; position: relative;">
-<img src="assets/tracking.webp" alt="Animated view of visual features tracked on a tumbling satellite" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C9CED8; background: rgba(5,7,12,0.75);">Feature tracking on a tumbling target, rendered scene</figcaption>
-</figure>
-</div>
+    <section class="section container applications" id="applications" aria-labelledby="applications-title">
+      <div class="section-top"><div><p class="eyebrow">Mission applications</p><h2 id="applications-title">From inspection to<br>proximity operations.</h2></div><p>Capabilities for commercial and national-security missions that need to understand and operate around objects in orbit.</p></div>
+      <div class="mission-grid">
+        <article class="mission"><div class="mission-image"><img src="assets/servicing.jpg" alt="Illustration of spacecraft approaching a satellite above Earth" width="800" height="400" loading="lazy"><span class="mission-tag">Sustainable space operations</span></div><div class="mission-copy"><h3>Inspect before you approach.</h3><p>Assess a client or inactive spacecraft before planning a closer interaction. Onboard inspection and characterization can inform servicing, mission extension, and debris-removal operations.</p><a class="link" href="mailto:info@penumbraspace.com?subject=Spacecraft%20inspection%20discussion">Discuss an inspection mission <span aria-hidden="true">↗</span></a></div></article>
+        <article class="mission"><div class="mission-image"><img src="assets/tactical.jpg" alt="Illustration of a satellite operating in orbit" width="800" height="400" loading="lazy"><span class="mission-tag">Space domain awareness</span></div><div class="mission-copy"><h3>Understand objects of interest.</h3><p>Characterize unfamiliar objects and their motion to inform operational planning. Explore onboard autonomy for missions where continuous ground involvement is impractical.</p><a class="link" href="mailto:info@penumbraspace.com?subject=Space%20domain%20awareness%20discussion">Discuss your operational needs <span aria-hidden="true">↗</span></a></div></article>
+      </div>
+    </section>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 88px;">
-<div style="border-top: 2px solid #FFC000; padding-top: 24px;">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #9AA1AF;">Perception</div>
-<h3 style="margin: 10px 0 12px; font-size: 24px; font-weight: 400; color: #FFFFFF;">Reliable visual tracking</h3>
-<p style="margin: 0; color: #A9AFBD;">Illumination-robust detection and tracking from a single onboard camera, in real time, as targets tumble through light and shadow.</p>
-</div>
-<div style="border-top: 2px solid #FFC000; padding-top: 24px;">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #9AA1AF;">Estimation</div>
-<h3 style="margin: 10px 0 12px; font-size: 24px; font-weight: 400; color: #FFFFFF;">Accurate orbital estimation</h3>
-<p style="margin: 0; color: #A9AFBD;">Orbital-mechanics constraints turn what the camera sees into relative pose and rates, and recover target properties that cannot be measured from the ground.</p>
-</div>
-<div style="border-top: 2px solid #FFC000; padding-top: 24px;">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #9AA1AF;">Hardware</div>
-<h3 style="margin: 10px 0 12px; font-size: 24px; font-weight: 400; color: #FFFFFF;">Scalable across fleets</h3>
-<p style="margin: 0; color: #A9AFBD;">Designed for accessible, low-SWaP-C sensing, so it can upgrade new builds and give deployed satellites new utility with the sensors they already carry.</p>
-</div>
-</div>
+    <section class="section container team" id="team" aria-labelledby="team-title">
+      <div class="team-top"><p class="eyebrow">Our team</p><h2 id="team-title">Built on spacecraft<br>autonomy research.</h2><p>A team shaped at Georgia Tech, bringing together experience in spacecraft autonomy, perception, and estimation.</p></div>
+      <div class="people">
+        <article class="person"><img src="assets/team-florez.jpg" alt="Juan-Diego Florez" width="80" height="96" loading="lazy"><div><h3>Juan-Diego Florez</h3><p class="role">Spacecraft autonomy</p><p>PhD candidate at Georgia Tech, researching autonomy for orbital operations.</p></div></article>
+        <article class="person"><img src="assets/team-velentzas.jpg" alt="Iason Velentzas" width="80" height="96" loading="lazy"><div><h3>Iason Velentzas</h3><p class="role">Perception systems</p><p>PhD candidate at Georgia Tech, researching reliable perception in space.</p></div></article>
+        <article class="person"><img src="assets/team-tsiotras.jpg" alt="Dr. Panagiotis Tsiotras" width="80" height="96" loading="lazy"><div><h3>Dr. Panagiotis Tsiotras</h3><p class="role">Aerospace &amp; autonomy</p><p>Georgia Tech faculty with expertise in control, robotics, and spacecraft autonomy.</p></div></article>
+      </div><a class="link team-link" href="team.html">Meet the team <span aria-hidden="true">↗</span></a>
+    </section>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 88px;">
-<div style="background: #05070C; border: 1px solid #1C2230; padding: 40px;">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFC000;">INSPECT</div>
-<h3 style="margin: 8px 0 16px; font-family: 'Julius Sans One', sans-serif; font-weight: 400; font-size: 24px; color: #FFFFFF;">Inspection and characterization</h3>
-<p style="margin: 0 0 20px; color: #A9AFBD;">Characterize shape, spin and mass properties of a target from large standoff distances.</p>
-<p style="margin: 0; color: #E9ECF2;">Earlier go/no-go decisions, made at greater standoff, with lower collision risk.</p>
-</div>
-<div style="background: #05070C; border: 1px solid #1C2230; padding: 40px;">
-<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFC000;">NAVIGATE</div>
-<h3 style="margin: 8px 0 16px; font-family: 'Julius Sans One', sans-serif; font-weight: 400; font-size: 24px; color: #FFFFFF;">Autonomous proximity navigation</h3>
-<p style="margin: 0 0 20px; color: #A9AFBD;">Real-time relative navigation with no ground loop, through changing illumination, around targets with no prior model.</p>
-<p style="margin: 0; color: #E9ECF2;">Adaptability in real time, no dependence on comms or GNSS, and it works with unknown targets.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CLOSING -->
-<section class="closing-bg" style="padding: 160px 0 140px; text-align: center;">
-<div style="max-width: 860px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center;">
-<img src="assets/logo-mark.png" alt="" aria-hidden="true" style="height: 72px; width: auto; display: block; opacity: 0.9;">
-<p style="margin: 40px 0 0; font-size: 19px; color: #C9CED8;"><span style="color: #FFC000;">Penumbra</span> is the transition between light and shadow.</p>
-<h2 style="margin: 16px 0 0; font-family: 'Julius Sans One', sans-serif; font-weight: 400; font-size: clamp(28px, 4vw, 48px); line-height: 1.1; color: #FFFFFF;">We make the extraordinary routine.</h2>
-<a href="mailto:info@penumbraspace.com" style="margin-top: 48px; background: #FFC000; color: #05070C; padding: 18px 32px; font-weight: 600; border-radius: 2px;">info@penumbraspace.com</a>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer style="border-top: 1px solid #151B27;">
-<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; font-size: 14px; color: #9AA1AF;">
-<img src="assets/logo-wordmark.png" alt="Penumbra Autonomy" style="height: 32px; width: auto; display: block;">
-<div style="display: flex; flex-wrap: wrap; gap: 8px 24px;"><a href="./" style="color: #C9CED8;">Home</a><a href="applications.html" style="color: #C9CED8;">Applications</a><a href="team.html" style="color: #C9CED8;">Team</a></div>
-<div>© 2026 Penumbra Autonomy · Atlanta, Georgia</div>
-</div>
-</footer>
-
-</div>
+    <section class="contact frame" aria-labelledby="contact-title"><div class="contact-copy"><p class="eyebrow">Let's talk about your mission</p><h2 id="contact-title">Make the extraordinary<br>routine.</h2><p>Planning a mission that needs onboard inspection, characterization, or relative navigation? Let's discuss your requirements and explore the fit.</p></div><div class="contact-action"><a class="button" href="mailto:info@penumbraspace.com?subject=Mission%20discussion">Discuss your mission <span aria-hidden="true">↗</span></a><a href="mailto:info@penumbraspace.com">info@penumbraspace.com</a></div></section>
+  </main>
+  <footer><div class="container"><a href="./" aria-label="Penumbra Autonomy home"><img class="logo" src="assets/logo-wordmark.png" alt="Penumbra Autonomy" width="112" height="43" loading="lazy"></a><nav class="footer-links" aria-label="Footer"><a href="#capabilities">Capabilities</a><a href="applications.html">Applications</a><a href="team.html">Team</a><a href="./">Home</a></nav><div class="identity"><span><strong>Georgia Tech</strong> research roots</span><span>Atlanta, Georgia</span><span>Founded 2026</span></div><p class="copyright">© 2026 Penumbra Autonomy</p></div></footer>
+  <script>
+    const menu = document.querySelector('.mobile-menu');
+    menu.addEventListener('click', event => {
+      if (event.target.closest('a')) menu.open = false;
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false;
+        menu.querySelector('summary').focus();
+      }
+    });
+  </script>
 </body>
 </html>

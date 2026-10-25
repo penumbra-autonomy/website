@@ -4,7 +4,7 @@ Static website for Penumbra Autonomy. Plain HTML and images, no build step.
 
 | File | Page |
 |---|---|
-| `index.html` | Home: hero, Our Capabilities |
+| `index.html` | Home: hero, capabilities, problem, applications, team, contact |
 | `applications.html` | Applications |
 | `team.html` | Team |
 | `assets/` | Logo, favicon, photos, images |
@@ -22,4 +22,4 @@ DNS at the domain registrar:
 Leave the existing `MX` / email records untouched.
 
 ## Editing
-Edit the HTML directly; colors and fonts are inline. Accent color: `#FFC000`. Fonts: Julius Sans One (headings), Didact Gothic (body), JetBrains Mono (labels), loaded from Google Fonts.
+Edit the HTML directly; styles are included in each page. Accent color: `#FFC000`. The homepage uses Manrope with JetBrains Mono labels; the other pages use Julius Sans One headings and Didact Gothic body text. Fonts are loaded from Google Fonts.
